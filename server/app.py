@@ -9,6 +9,7 @@ app.secret_key = b'?w\x85Z\x08Q\xbdO\xb8\xa9\xb65Kj\xa9_'
 def show_session(key):
 
     session["hello"] = session.get("hello") or "World"
+    
     session["goodnight"] = session.get("goodnight") or "Moon"
 
     response = make_response(jsonify({
@@ -25,6 +26,7 @@ def show_session(key):
 
     return response
 
-if __name__ == '__main__':
-    app.run(port=5555)
+
+if __name__ == "__main__":
+    app.run(debug=True)
     
